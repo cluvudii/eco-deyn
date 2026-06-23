@@ -1,18 +1,16 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>eco ♡ deyn</title>
-
-<style>
+<title>eco ♡ deyn</title><style>
 body{
 margin:0;
-font-family:Arial,sans-serif;
-background:linear-gradient(to bottom,#ffd6e7,#fff0f5);
-text-align:center;
-color:#ff4d88;
+font-family:Georgia, serif;
+background:#f8f0df;
+background-image:
+linear-gradient(#e8dcc6 1px, transparent 1px),
+linear-gradient(90deg,#e8dcc6 1px, transparent 1px);
+background-size:30px 30px;
 }
 
 .login{
@@ -21,82 +19,107 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
+text-align:center;
+}
+
+.login h1{
+color:#b74b4b;
 }
 
 input{
 padding:12px;
-border:none;
 border-radius:20px;
+border:none;
 width:220px;
-margin:10px;
 }
 
 button{
+margin-top:10px;
 padding:12px 25px;
 border:none;
 border-radius:20px;
-background:#ff7eb3;
+background:#d66b6b;
 color:white;
 }
 
 .main{
 display:none;
 padding:20px;
+position:relative;
 }
 
-.gallery img{
-width:220px;
-margin:10px;
-border-radius:20px;
-box-shadow:0 0 10px rgba(0,0,0,.15);
+.title{
+text-align:center;
+font-size:32px;
+color:#b74b4b;
 }
-</style>
-</head>
 
-<body>
+.sticker{
+position:absolute;
+font-size:35px;
+}
 
-<div class="login" id="login">
+.s1{top:20px;left:20px;}
+.s2{top:80px;right:30px;}
+.s3{bottom:50px;left:30px;}
+.s4{bottom:120px;right:20px;}
+
+.polaroid{
+background:white;
+width:280px;
+margin:30px auto;
+padding:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.2);
+transform:rotate(-2deg);
+}
+
+.photo{
+height:180px;
+background:#ddd;
+margin-bottom:15px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.note{
+background:#fff8e8;
+padding:15px;
+border-radius:15px;
+max-width:320px;
+margin:auto;
+text-align:center;
+}
+
+.monthsary{
+margin-top:15px;
+font-size:18px;
+color:#b74b4b;
+}
+</style></head><body><div class="login" id="login">
 <h1>🌷 Our Little World 🌷</h1>
-<p>Enter Password</p>
+<p>Enter Password</p><input type="password" id="pass"><button onclick="login()">Enter ♡</button>
 
-<input type="password" id="password">
+</div><div class="main" id="main"><div class="sticker s1">🐰</div>
+<div class="sticker s2">🍓</div>
+<div class="sticker s3">⭐</div>
+<div class="sticker s4">💌</div><h1 class="title">eco ♡ deyn</h1><div class="polaroid">
+<div class="photo">📸 PHOTO 1</div>
+<div class="photo">📸 PHOTO 2</div>
+<div class="photo">📸 PHOTO 3</div>
+</div><div class="note">
+<p>the place where our story lives 🌷</p><div class="monthsary">
+Together since 07.09 💗
+</div></div></div><script>
+function login(){
 
-<button onclick="checkPassword()">Enter ♡</button>
-</div>
-
-<div class="main" id="main">
-
-<h1>eco ♡ deyn</h1>
-
-<p>the place where our story lives 🌷</p>
-
-<h2>💗 Our Memories 💗</h2>
-
-<div class="gallery">
-
-<img src="https://picsum.photos/300?1">
-<img src="https://picsum.photos/300?2">
-<img src="https://picsum.photos/300?3">
-
-</div>
-
-</div>
-
-<script>
-
-function checkPassword(){
-
-if(document.getElementById("password").value==="0709"){
+if(document.getElementById("pass").value==="0709"){
 document.getElementById("login").style.display="none";
 document.getElementById("main").style.display="block";
-}
-else{
+}else{
 alert("Wrong Password 💔");
 }
 
 }
-
-</script>
-
-</body>
+</script></body>
 </html>
