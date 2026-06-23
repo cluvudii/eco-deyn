@@ -1,16 +1,26 @@
-<!DOCTYPE html><html>
+<!DOCTYPE html>
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>eco ♡ deyn</title><style>
-body{
+<title>eco & deyn ♡</title>
+
+<style>
+
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
 font-family:Georgia, serif;
 background:#f8f0df;
 background-image:
-linear-gradient(#e8dcc6 1px, transparent 1px),
-linear-gradient(90deg,#e8dcc6 1px, transparent 1px);
-background-size:30px 30px;
+linear-gradient(#ddd 1px, transparent 1px),
+linear-gradient(90deg,#ddd 1px, transparent 1px);
+background-size:25px 25px;
+overflow-x:hidden;
 }
 
 .login{
@@ -23,14 +33,15 @@ text-align:center;
 }
 
 .login h1{
-color:#b74b4b;
+color:#b63e4f;
+margin-bottom:15px;
 }
 
 input{
 padding:12px;
-border-radius:20px;
-border:none;
 width:220px;
+border:none;
+border-radius:20px;
 }
 
 button{
@@ -38,88 +49,173 @@ margin-top:10px;
 padding:12px 25px;
 border:none;
 border-radius:20px;
-background:#d66b6b;
+background:#c73c50;
 color:white;
+font-weight:bold;
 }
 
 .main{
 display:none;
-padding:20px;
+min-height:100vh;
+padding:30px 15px;
 position:relative;
 }
 
-.title{
-text-align:center;
-font-size:32px;
-color:#b74b4b;
-}
+/* Stickers */
 
 .sticker{
 position:absolute;
 font-size:35px;
 }
 
-.s1{top:20px;left:20px;}
-.s2{top:80px;right:30px;}
-.s3{bottom:50px;left:30px;}
-.s4{bottom:120px;right:20px;}
+.s1{top:30px;left:20px;}
+.s2{top:100px;right:20px;}
+.s3{bottom:120px;left:20px;}
+.s4{bottom:50px;right:20px;}
+.s5{top:300px;left:10px;}
+.s6{top:500px;right:15px;}
+
+.title{
+text-align:center;
+font-size:38px;
+color:#b63e4f;
+margin-top:20px;
+margin-bottom:30px;
+}
+
+/* Polaroid */
 
 .polaroid{
 background:white;
-width:280px;
-margin:30px auto;
+width:320px;
+margin:auto;
 padding:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.2);
+box-shadow:0 10px 20px rgba(0,0,0,.2);
 transform:rotate(-2deg);
+border:1px solid #ddd;
 }
 
 .photo{
 height:180px;
-background:#ddd;
+background:#111;
 margin-bottom:15px;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
+color:white;
+font-size:20px;
 }
 
 .note{
-background:#fff8e8;
+background:#fff8e9;
 padding:15px;
-border-radius:15px;
+margin:25px auto;
 max-width:320px;
-margin:auto;
+border-radius:15px;
+box-shadow:0 5px 10px rgba(0,0,0,.1);
 text-align:center;
 }
 
-.monthsary{
-margin-top:15px;
+.counter{
+margin-top:10px;
+color:#b63e4f;
 font-size:18px;
-color:#b74b4b;
+font-weight:bold;
 }
-</style></head><body><div class="login" id="login">
-<h1>🌷 Our Little World 🌷</h1>
-<p>Enter Password</p><input type="password" id="pass"><button onclick="login()">Enter ♡</button>
 
-</div><div class="main" id="main"><div class="sticker s1">🐰</div>
+.footer{
+text-align:center;
+margin-top:20px;
+font-size:14px;
+color:#777;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="login" id="login">
+
+<h1>🌷 Our Little World 🌷</h1>
+
+<input type="password" id="password" placeholder="Enter Password">
+
+<button onclick="enterSite()">Enter ♡</button>
+
+</div>
+
+<div class="main" id="main">
+
+<div class="sticker s1">🐰</div>
 <div class="sticker s2">🍓</div>
 <div class="sticker s3">⭐</div>
-<div class="sticker s4">💌</div><h1 class="title">eco ♡ deyn</h1><div class="polaroid">
-<div class="photo">📸 PHOTO 1</div>
-<div class="photo">📸 PHOTO 2</div>
-<div class="photo">📸 PHOTO 3</div>
-</div><div class="note">
-<p>the place where our story lives 🌷</p><div class="monthsary">
-Together since 07.09 💗
-</div></div></div><script>
-function login(){
+<div class="sticker s4">🍒</div>
+<div class="sticker s5">💌</div>
+<div class="sticker s6">✨</div>
 
-if(document.getElementById("pass").value==="0709"){
+<h1 class="title">eco & deyn ♡</h1>
+
+<div class="polaroid">
+
+<div class="photo">
+PHOTO 1
+</div>
+
+<div class="photo">
+PHOTO 2
+</div>
+
+<div class="photo">
+PHOTO 3
+</div>
+
+</div>
+
+<div class="note">
+
+<p>
+the place where our story lives 🌷
+</p>
+
+<div class="counter" id="monthsary"></div>
+
+</div>
+
+<div class="footer">
+made with love ♡
+</div>
+
+</div>
+
+<script>
+
+function enterSite(){
+
+if(document.getElementById("password").value==="0709"){
+
 document.getElementById("login").style.display="none";
 document.getElementById("main").style.display="block";
+
 }else{
+
 alert("Wrong Password 💔");
+
 }
 
 }
-</script></body>
+
+const startDate = new Date("2025-07-09");
+const today = new Date();
+
+const months =
+(today.getFullYear()-startDate.getFullYear())*12 +
+(today.getMonth()-startDate.getMonth());
+
+document.getElementById("monthsary").innerHTML =
+months + " Month(s) Together 💗";
+
+</script>
+
+</body>
 </html>
