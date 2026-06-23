@@ -1,2 +1,102 @@
-# eco-deyn
-the place where our story lives. 🌷
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>eco ♡ deyn</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(to bottom,#ffd6e7,#fff0f5);
+text-align:center;
+color:#ff4d88;
+}
+
+.login{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+input{
+padding:12px;
+border:none;
+border-radius:20px;
+width:220px;
+margin:10px;
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:20px;
+background:#ff7eb3;
+color:white;
+}
+
+.main{
+display:none;
+padding:20px;
+}
+
+.gallery img{
+width:220px;
+margin:10px;
+border-radius:20px;
+box-shadow:0 0 10px rgba(0,0,0,.15);
+}
+</style>
+</head>
+
+<body>
+
+<div class="login" id="login">
+<h1>🌷 Our Little World 🌷</h1>
+<p>Enter Password</p>
+
+<input type="password" id="password">
+
+<button onclick="checkPassword()">Enter ♡</button>
+</div>
+
+<div class="main" id="main">
+
+<h1>eco ♡ deyn</h1>
+
+<p>the place where our story lives 🌷</p>
+
+<h2>💗 Our Memories 💗</h2>
+
+<div class="gallery">
+
+<img src="https://picsum.photos/300?1">
+<img src="https://picsum.photos/300?2">
+<img src="https://picsum.photos/300?3">
+
+</div>
+
+</div>
+
+<script>
+
+function checkPassword(){
+
+if(document.getElementById("password").value==="0709"){
+document.getElementById("login").style.display="none";
+document.getElementById("main").style.display="block";
+}
+else{
+alert("Wrong Password 💔");
+}
+
+}
+
+</script>
+
+</body>
+</html>
