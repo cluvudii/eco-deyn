@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>eco & deyn ♡</title>
-
-<style>
+<title>eco & deyn ♡</title><style>
 
 *{
 margin:0;
@@ -52,6 +49,7 @@ border-radius:20px;
 background:#c73c50;
 color:white;
 font-weight:bold;
+cursor:pointer;
 }
 
 .main{
@@ -59,13 +57,13 @@ display:none;
 min-height:100vh;
 padding:30px 15px;
 position:relative;
+animation:fadeIn 1.5s;
 }
-
-/* Stickers */
 
 .sticker{
 position:absolute;
 font-size:35px;
+animation:float 3s ease-in-out infinite;
 }
 
 .s1{top:30px;left:20px;}
@@ -83,27 +81,41 @@ margin-top:20px;
 margin-bottom:30px;
 }
 
-/* Polaroid */
+#cameraBtn{
+display:block;
+margin:auto;
+font-size:20px;
+padding:15px 30px;
+border-radius:40px;
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+#gallery{
+display:none;
+animation:fadeIn 1s;
+}
 
 .polaroid{
 background:white;
 width:320px;
-margin:auto;
+margin:25px auto;
 padding:15px;
 box-shadow:0 10px 20px rgba(0,0,0,.2);
-transform:rotate(-2deg);
 border:1px solid #ddd;
+transform:rotate(-2deg);
 }
 
 .photo{
-height:180px;
-background:#111;
-margin-bottom:15px;
-display:flex;
-justify-content:center;
-align-items:center;
-color:white;
-font-size:20px;
+height:220px;
+overflow:hidden;
+border-radius:8px;
+}
+
+.photo img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
 }
 
 .note{
@@ -130,72 +142,51 @@ font-size:14px;
 color:#777;
 }
 
-</style>
-</head>
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
 
-<body>
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-8px);}
+100%{transform:translateY(0);}
+}
 
-<div class="login" id="login">
+</style></head><body><div class="login" id="login"><h1>🌷 Our Little World 🌷</h1><input type="password" id="password" placeholder="Enter Password"><button onclick="enterSite()">Enter ♡</button>
 
-<h1>🌷 Our Little World 🌷</h1>
-
-<input type="password" id="password" placeholder="Enter Password">
-
-<button onclick="enterSite()">Enter ♡</button>
-
-</div>
-
-
-<div class="main" id="main">
-
-<div class="sticker s1">🐰</div>
+</div><div class="main" id="main"><div class="sticker s1">🐰</div>
 <div class="sticker s2">🍓</div>
 <div class="sticker s3">⭐</div>
 <div class="sticker s4">🍒</div>
 <div class="sticker s5">💌</div>
-<div class="sticker s6">✨</div>
-
-<h1 class="title">eco & deyn ♡</h1>
-
-
-<div class="polaroid">
-
+<div class="sticker s6">✨</div><h1 class="title">eco & deyn ♡</h1><button id="cameraBtn" onclick="openGallery()">
+📷 Open Memories
+</button><div id="gallery"><div class="polaroid">
 <div class="photo">
-<img src="Screenshot_20260623-174152.png" style="width:100%;height:100%;object-fit:cover;">
+<img src="Screenshot_20260623-174152.png">
 </div>
-
+</div><div class="polaroid">
 <div class="photo">
-<img src="Screenshot_20260623-174152.png" style="width:100%;height:100%;object-fit:cover;">
+<img src="Screenshot_20260623-174152.png">
 </div>
-
+</div><div class="polaroid">
 <div class="photo">
-<img src="Screenshot_20260623-174152.png" style="width:100%;height:100%;object-fit:cover;">
+<img src="Screenshot_20260623-174152.png">
 </div>
-
-</div>
-
-
-<div class="note">
-
-<p>
+</div></div><div class="note"><p>
 the place where our story lives 🌷
-</p>
-
-<div class="counter">
+</p><div class="counter">
 ♡ Monthsary: July 09 ♡
-</div>
-
-</div>
-
-
-<div class="footer">
+</div></div><div class="footer">
 made with love ♡
-</div>
-
-</div>
-
-
-<script>
+</div></div><script>
 
 function enterSite(){
 
@@ -212,7 +203,17 @@ alert("Wrong Password 💔");
 
 }
 
-</script>
+function openGallery(){
 
-</body>
+const gallery = document.getElementById("gallery");
+
+if(gallery.style.display==="block"){
+gallery.style.display="none";
+}else{
+gallery.style.display="block";
+}
+
+}
+
+</script></body>
 </html>
