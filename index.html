@@ -1,25 +1,26 @@
-<!DOCTYPE html><html>
+<!DOCTYPE html>
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>eco & deyn ♡</title><style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
+<title>eco & deyn ♡</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
 body{
-font-family:Georgia, serif;
-background:#f8f0df;
-background-image:
-linear-gradient(#ddd 1px, transparent 1px),
-linear-gradient(90deg,#ddd 1px, transparent 1px);
-background-size:25px 25px;
+font-family:Georgia,serif;
+background:#efe4cc;
 overflow-x:hidden;
+position:relative;
 }
-
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background-image:radial-gradient(rgba(0,0,0,.08) 1px, transparent 1px);
+background-size:4px 4px;
+pointer-events:none;
+opacity:.35;
+}
 .login{
 height:100vh;
 display:flex;
@@ -28,192 +29,135 @@ justify-content:center;
 align-items:center;
 text-align:center;
 }
-
-.login h1{
-color:#b63e4f;
-margin-bottom:15px;
-}
-
+.login h1{color:#6d4c41;margin-bottom:15px;}
 input{
-padding:12px;
-width:220px;
-border:none;
+padding:12px;width:220px;
+border:1px solid #c8b79c;
 border-radius:20px;
+background:#fffaf0;
 }
-
 button{
 margin-top:10px;
 padding:12px 25px;
 border:none;
-border-radius:20px;
-background:#c73c50;
+border-radius:25px;
+background:#8d6e63;
 color:white;
 font-weight:bold;
 cursor:pointer;
 }
-
 .main{
 display:none;
 min-height:100vh;
 padding:30px 15px;
 position:relative;
-animation:fadeIn 1.5s;
+animation:fadeIn 1s;
 }
-
-.sticker{
-position:absolute;
-font-size:35px;
-animation:float 3s ease-in-out infinite;
-}
-
+.sticker{position:absolute;font-size:28px;opacity:.7;}
 .s1{top:30px;left:20px;}
 .s2{top:100px;right:20px;}
 .s3{bottom:120px;left:20px;}
 .s4{bottom:50px;right:20px;}
-.s5{top:300px;left:10px;}
-.s6{top:500px;right:15px;}
-
 .title{
 text-align:center;
-font-size:38px;
-color:#b63e4f;
+font-size:42px;
+color:#5d4037;
+font-style:italic;
 margin-top:20px;
-margin-bottom:30px;
 }
-
+.subtitle{
+text-align:center;
+color:#7a6a58;
+margin-bottom:25px;
+font-style:italic;
+}
 #cameraBtn{
 display:block;
-margin:auto;
-font-size:20px;
-padding:15px 30px;
-border-radius:40px;
-box-shadow:0 5px 15px rgba(0,0,0,.15);
+margin:20px auto;
+font-size:18px;
 }
-
 #gallery{
 display:none;
 animation:fadeIn 1s;
 }
-
 .polaroid{
 background:white;
 width:320px;
 margin:25px auto;
-padding:15px;
-box-shadow:0 10px 20px rgba(0,0,0,.2);
-border:1px solid #ddd;
+padding:15px 15px 40px;
+box-shadow:0 8px 20px rgba(0,0,0,.25);
 transform:rotate(-2deg);
 }
-
-.photo{
-height:220px;
-overflow:hidden;
-border-radius:8px;
-}
-
+.polaroid:nth-child(even){transform:rotate(2deg);}
+.photo{height:220px;overflow:hidden;}
 .photo img{
-width:100%;
-height:100%;
+width:100%;height:100%;
 object-fit:cover;
-display:block;
+filter:sepia(.25);
 }
-
 .note{
-background:#fff8e9;
+background:#f8f1e4;
 padding:15px;
 margin:25px auto;
 max-width:320px;
 border-radius:15px;
-box-shadow:0 5px 10px rgba(0,0,0,.1);
 text-align:center;
 }
-
-.counter{
-margin-top:10px;
-color:#b63e4f;
-font-size:18px;
-font-weight:bold;
-}
-
-.footer{
-text-align:center;
-margin-top:20px;
-font-size:14px;
-color:#777;
-}
-
+.counter{color:#7b5e57;font-weight:bold;}
+.footer{text-align:center;color:#777;margin:20px;}
 @keyframes fadeIn{
-from{
-opacity:0;
-transform:translateY(20px);
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
 }
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
+</style>
+</head>
+<body>
 
-@keyframes float{
-0%{transform:translateY(0);}
-50%{transform:translateY(-8px);}
-100%{transform:translateY(0);}
-}
-
-</style></head><body><div class="login" id="login"><h1>🌷 Our Little World 🌷</h1><input type="password" id="password" placeholder="Enter Password"><button onclick="enterSite()">Enter ♡</button>
-
-</div><div class="main" id="main"><div class="sticker s1">🐰</div>
-<div class="sticker s2">🍓</div>
-<div class="sticker s3">⭐</div>
-<div class="sticker s4">🍒</div>
-<div class="sticker s5">💌</div>
-<div class="sticker s6">✨</div><h1 class="title">eco & deyn ♡</h1><button id="cameraBtn" onclick="openGallery()">
-📷 Open Memories
-</button><div id="gallery"><div class="polaroid">
-<div class="photo">
-<img src="Screenshot_20260623-174152.png">
+<div class="login" id="login">
+<h1> Our Little World </h1>
+<input type="password" id="password" placeholder="Enter Password">
+<button onclick="enterSite()">Enter ♡</button>
 </div>
-</div><div class="polaroid">
-<div class="photo">
-<img src="Screenshot_20260623-174152.png">
-</div>
-</div><div class="polaroid">
-<div class="photo">
-<img src="Screenshot_20260623-174152.png">
-</div>
-</div></div><div class="note"><p>
-the place where our story lives 🌷
-</p><div class="counter">
-♡ Monthsary: July 09 ♡
-</div></div><div class="footer">
-made with love ♡
-</div></div><script>
 
+<div class="main" id="main">
+<div class="sticker s1">✧</div>
+<div class="sticker s2">❦</div>
+<div class="sticker s3">☾</div>
+<div class="sticker s4">༄</div>
+
+<h1 class="title">eco & deyn</h1>
+<p class="subtitle">since july 09, 2025 ✧</p>
+
+<button id="cameraBtn" onclick="openGallery()">📷 Open Memories</button>
+
+<div id="gallery">
+<div class="polaroid"><div class="photo"><img src="Screenshot_20260623-174152.png"></div></div>
+<div class="polaroid"><div class="photo"><img src="Screenshot_20260623-174152.png"></div></div>
+<div class="polaroid"><div class="photo"><img src="Screenshot_20260623-174152.png"></div></div>
+</div>
+
+<div class="note">
+<p>the place where our story lives </p>
+<br>
+<div class="counter">♡ Monthsary: July 09 ♡</div>
+</div>
+
+<div class="footer">made with love ♡</div>
+</div>
+
+<script>
 function enterSite(){
-
 if(document.getElementById("password").value==="0709"){
-
 document.getElementById("login").style.display="none";
 document.getElementById("main").style.display="block";
-
 }else{
-
 alert("Wrong Password 💔");
-
 }
-
 }
-
 function openGallery(){
-
-const gallery = document.getElementById("gallery");
-
-if(gallery.style.display==="block"){
-gallery.style.display="none";
-}else{
-gallery.style.display="block";
+const gallery=document.getElementById("gallery");
+gallery.style.display=(gallery.style.display==="block")?"none":"block";
 }
-
-}
-
-</script></body>
+</script>
+</body>
 </html>
